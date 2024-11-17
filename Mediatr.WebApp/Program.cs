@@ -1,4 +1,5 @@
 using Mediatr.Business.DependencyResolver;
+using Mediatr.WebApp.Middlewears;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddBusinessServices();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddLogging();
+builder.Services.AddTransient<GlobalHandlingexeptionsMiddlewear>();
 
 var app = builder.Build();
 
