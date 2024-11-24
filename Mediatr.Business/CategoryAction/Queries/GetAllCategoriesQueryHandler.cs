@@ -1,6 +1,7 @@
 ﻿using Mediatr.DataAccess.Concrete.EntityFramework;
 using Mediatr.Entities.DTOs.CategoryDTOs;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,14 @@ namespace Mediatr.Business.CategoryAction.Queries
             _context = context;
         }
 
-        public Task<IEnumerable<GetCategoryDTO>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<GetCategoryDTO>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _context.Categories
+                .Select(category => new GetCategoryDTO
+                {
+                    Name = category.Name,
+                    ProductName = category.Products.Select(product => product.Name).ToList()
+                }).ToListAsync();
         }
     }
 }
