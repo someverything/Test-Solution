@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Mediatr.Business.ProductAction.Queries
 {
-    public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, GetProductDTO>
+    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, GetProductDTO>
     {
         private readonly AppDbContext _context;
 
-        public GetProductByIdHandler(AppDbContext context)
+        public GetProductByIdQueryHandler(AppDbContext context)
         {
             _context = context;
         }

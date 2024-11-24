@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace Mediatr.Entities.Concrete
 {
-    public class Product : BaseEntity
+    public class Category : BaseEntity
     {
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public Category Category { get; set; }
-        public Guid CategoryId { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
