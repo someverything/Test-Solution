@@ -1,4 +1,4 @@
-﻿using Mediatr.DataAccess.Abstract.EntityFramework;
+﻿using Mediatr.DataAccess.Concrete.EntityFramework;
 using Mediatr.Entities.Concrete;
 using Mediatr.Entities.DTOs.ProductDTOs;
 using MediatR;
@@ -26,6 +26,7 @@ namespace Mediatr.Core.ProductAction.Commands
                 Id = Guid.NewGuid(),
                 Name = request.Name,
                 Price = request.Price,
+                CategoryId = request.CategoryId
             };
 
             _context.Products.Add(product);
@@ -36,6 +37,8 @@ namespace Mediatr.Core.ProductAction.Commands
                 Id = product.Id,
                 Name = product.Name,
                 Price = product.Price,
+                CategoryId = product.CategoryId
+                
             };
 
             return CreateProductDTO;

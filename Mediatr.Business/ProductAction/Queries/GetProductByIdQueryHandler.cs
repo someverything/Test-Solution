@@ -1,4 +1,4 @@
-﻿using Mediatr.DataAccess.Abstract.EntityFramework;
+﻿using Mediatr.DataAccess.Concrete.EntityFramework;
 using Mediatr.Entities.DTOs.ProductDTOs;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,8 @@ namespace Mediatr.Business.ProductAction.Queries
             {
                 Id = p.Id,
                 Name = p.Name,
-                Price = p.Price
+                Price = p.Price,
+                CategoryId = p.CategoryId
             }).FirstOrDefaultAsync(cancellationToken);
 
             return product;

@@ -1,4 +1,4 @@
-﻿using Mediatr.DataAccess.Abstract.EntityFramework;
+﻿using Mediatr.DataAccess.Concrete.EntityFramework;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

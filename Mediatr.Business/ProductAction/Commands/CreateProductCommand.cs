@@ -12,5 +12,6 @@ namespace Mediatr.Core.ProductAction.Commands
     {
         public String Name { get; set; }
         public  decimal Price { get; set; }
+        public Guid CategoryId { get; set; }
     }
 }

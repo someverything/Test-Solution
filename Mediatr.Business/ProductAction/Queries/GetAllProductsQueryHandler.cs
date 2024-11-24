@@ -1,5 +1,5 @@
 ﻿using Mediatr.Core.ProductAction.Commands;
-using Mediatr.DataAccess.Abstract.EntityFramework;
+using Mediatr.DataAccess.Concrete.EntityFramework;
 using Mediatr.Entities.Concrete;
 using Mediatr.Entities.DTOs.ProductDTOs;
 using MediatR;
@@ -28,7 +28,8 @@ namespace Mediatr.Core.ProductAction.Queries
                 {
                     Id = p.Id,
                     Name = p.Name,
-                    Price = p.Price
+                    Price = p.Price,
+                    CategoryId = p.CategoryId,
                 }).ToListAsync(cancellationToken);
 
             return GetProductDTOs;

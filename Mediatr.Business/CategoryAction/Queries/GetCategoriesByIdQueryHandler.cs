@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mediatr.Entities.DTOs.CategoryDTOs
+namespace Mediatr.Business.CategoryAction.Queries
 {
-    public class CreateCategoryDTO
+    internal class GetCategoriesByIdQueryHandler
     {
-        public string Name { get; set; }
     }
 }

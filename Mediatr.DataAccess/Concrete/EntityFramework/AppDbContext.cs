@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mediatr.DataAccess.Abstract.EntityFramework
+namespace Mediatr.DataAccess.Concrete.EntityFramework
 {
     public class AppDbContext : DbContext
     {
@@ -17,6 +17,7 @@ namespace Mediatr.DataAccess.Abstract.EntityFramework
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
